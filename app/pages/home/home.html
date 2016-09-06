@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="home">
+      <ion-card *ngFor="let post of _posts;" (click)="goToPostDetail(post)">
+      <img />
+      <ion-card-content>
+        <ion-card-title>
+          {{post.title.rendered}}
+          </ion-card-title>
+          <div [innerHTML]="post.excerpt.rendered | sanitizeHtml"></div>
+      </ion-card-content>
+  </ion-card>
+</ion-content>
